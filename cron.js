@@ -5,8 +5,10 @@ import { cronGetHoroscopesAndSaveToDB } from './cronHoroscopes.js'
 console.log('cron started')
 
 
-cron.schedule('*/2 * * * *', ()=> cronGetHoroscopesAndSaveToDB(4))
-
+cron.schedule('00 19 * * *', ()=> cronGetHoroscopesAndSaveToDB(3),  {
+    scheduled: true,
+    timezone: "Europe/Rome"
+  })
 
 
 
