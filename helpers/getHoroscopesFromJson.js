@@ -1,0 +1,1 @@
+//receives a dateString returns an array horoscopes

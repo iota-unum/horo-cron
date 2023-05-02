@@ -1,0 +1,26 @@
+// CRONS
+import { getHoroscopes } from "./horoscopes/getHoroscopes.js";
+import dotenv from "dotenv";
+import { connectToDB } from "./database/connectToDB.js";
+import { saveDailyHoroscope } from "./database/saveDailyHoroscope.js";
+import { getFormattedDate } from "./helpers/dates.js";
+dotenv.config();
+
+export async function cronGetHoroscopesAndSaveToDB(daysToAddOrSubtract) {
+    // daysToAddOrSubtract defaults to 0 i.e. today
+  try {
+    const { dateColons, dateDashes } = getFormattedDate(daysToAddOrSubtract);
+
+    const horoscopes = await getHoroscopes(dateColons);
+
+    // // store horoscope in db
+    await connectToDB()
+    console.log("CONNESSO AL DB");
+    await saveDailyHoroscope(dateDashes, horoscopes);
+    console.log("daily horoscope saved!");
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
