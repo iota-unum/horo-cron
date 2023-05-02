@@ -6,11 +6,11 @@ import { getItalianTimestamp } from './helpers/dates.js'
 console.log('cron started')
 
 
-cron.schedule('00 19 * * *', ()=> cronGetHoroscopesAndSaveToDB(3),  {
+cron.schedule('46 1 * * *', ()=> cronGetHoroscopesAndSaveToDB(3),  {
     scheduled: true,
     timezone: "Europe/Rome"
   })
-cron.schedule('*/1 * * * *', ()=> console.log(getItalianTimestamp()),  {
+cron.schedule('*/10 * * * *', ()=> console.log(getItalianTimestamp()),  {
     scheduled: true,
     timezone: "Europe/Rome"
   })
