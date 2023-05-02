@@ -5,7 +5,7 @@ import { cronGetHoroscopesAndSaveToDB } from './cronHoroscopes.js'
 console.log('cron started')
 
 
-cron.schedule('15 14 * * *', ()=> cronGetHoroscopesAndSaveToDB(4))
+cron.schedule('*/2 * * * *', ()=> cronGetHoroscopesAndSaveToDB(4))
 
 
 

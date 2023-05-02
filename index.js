@@ -12,15 +12,16 @@ dotenv.config();
 
 async function main() {
   try {
+    const day = 4
 
 //     const day = 3 // 0 === today, 1 === tomorrow , -1 yesterday
 //     const {dateColons, dateDashes} = getFormattedDate(0)
 // const data = await getDataFromDB(dateDashes)
 // const horoscopes = data[0].horoscopes
 // console.log(horoscopes, 'DATA FROM INDEX')
-await generateAllImages(0)
+// await generateAllImages(0)
 
-  //  await  cronGetHoroscopesAndSaveToDB(day)
+   await  cronGetHoroscopesAndSaveToDB(day)
   //   //generate daily horoscope
   //   // const sign = 'toro'
   //   const { dateColons, dateDashes } = getFormattedDate(3);
