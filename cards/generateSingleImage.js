@@ -9,13 +9,13 @@ import { getItalianTimestamp } from "../helpers/dates.js";
 import {generateTemplate,} from './template.js'
 dotenv.config()
 
-const timestamp = getItalianTimestamp()
 
 
 
 
 
 export async function generateSingleImage(sign, horoscope){
+    const timestamp = getItalianTimestamp()
     
   
     
