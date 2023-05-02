@@ -10,10 +10,10 @@ cron.schedule('00 19 * * *', ()=> cronGetHoroscopesAndSaveToDB(3),  {
     scheduled: true,
     timezone: "Europe/Rome"
   })
-cron.schedule('*/1 * * * *', ()=> console.log(getItalianTimestamp()),  {
-    scheduled: true,
-    timezone: "Europe/Rome"
-  })
+// cron.schedule('*/1 * * * *', ()=> console.log(getItalianTimestamp()),  {
+//     scheduled: true,
+//     timezone: "Europe/Rome"
+//   })
 
 
 
