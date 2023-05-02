@@ -13,7 +13,6 @@ export async function saveDailyHoroscope (date, horoscopes){
 
           await dailyHoroscope.save()
           console.log('horoscope saved')
-          await disconnectFromDB()
           
         
     } catch (error) {

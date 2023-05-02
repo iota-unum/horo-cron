@@ -8,7 +8,7 @@ import { getPrompts } from "./horoscope-lib/getPrompts.js";
 
   const model = `"Ciao Toro, oggi la tua carriera potrebbe essere al centro delle tue preoccupazioni. La Luna in quadratura in Aquario nella decima casa ti incoraggia a cercare nuove opportunità professionali e a raggiungere i tuoi obiettivi lavorativi.\n\nLa congiunzione della Luna con Plutone in Aquario nella decima casa suggerisce che il successo arriverà solo se sarai disposto a lasciare andare vecchi schemi e ad abbracciare nuovi modelli di comportamento.\n\nIl trigono della Luna con Venere in Gemelli nella seconda casa può portare una buona notizia finanziaria o un contratto interessante.\n\nTuttavia, devi stare attento alla quadratura della Luna con Mercurio in Toro nella prima casa, poiché potresti avere difficoltà a comunicare le tue idee e dovrai fare uno sforzo maggiore per convincere gli altri.\n\nIn generale, sii aperto al cambiamento e fidati del tuo istinto quando si tratta di prendere decisioni importanti in ambito professionale ed economico." `;
   export async function getHoroscopes(date) {
-      const testPrompt = [getPrompts(date)[1]];
+      const testPrompt = [getPrompts(date)[11]];
       const prompts = getPrompts(date);
       try {
            const api = new ChatGPTAPI({
@@ -25,6 +25,7 @@ import { getPrompts } from "./horoscope-lib/getPrompts.js";
            const fullPrompt = `Per il segno zodiacale ${prompt.sign} questi gli aspetti di oggi: ${prompt.moonPrompts}. Scrivi un oroscopo del giorno, brillante e originale, in italiano impeccabile senza errori grammaticali. Se un aspetto presenta un'opposizione o una quadratura, anche la congiunzione e il trigono associati sono considerati negativi. Per favore, evita di presentare gli aspetti positivi come tali se il segno è in opposizione o quadratura rispetto a un pianeta coinvolto. Sii onesto e preciso, ma incoraggiante. non superare le 170 parole ` 
            const response = await api.sendMessage(fullPrompt);
            const text = response.text;
+           console.log(text)
            output.push({
              sign: prompt.sign,
              date: prompt.date,
