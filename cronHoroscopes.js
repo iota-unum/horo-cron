@@ -10,6 +10,7 @@ export async function cronGetHoroscopesAndSaveToDB(daysToAddOrSubtract) {
     // daysToAddOrSubtract defaults to 0 i.e. today
   try {
     const { dateColons, dateDashes } = getFormattedDate(daysToAddOrSubtract);
+    console.log(dateColons, 'date from cronGetHoroscopes')
 
     const horoscopes = await getHoroscopes(dateColons);
 

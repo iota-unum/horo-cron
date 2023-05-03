@@ -203,6 +203,7 @@ export function addMoonToDecadesAspects(decadesAspects, date) {
 }
 
 export function getGlobalOverview(date){
+  console.log(date, 'date from globalOverview')
 const decadesAspects = getDecadesAspects(date)
 return addMoonToDecadesAspects(decadesAspects, date)
 
