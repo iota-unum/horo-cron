@@ -7,6 +7,7 @@ import  path from 'path'
 import { getDataBySign } from "../database/getDataFromDB.js";
 import { getItalianTimestamp } from "../helpers/dates.js";
 import {generateTemplate,} from './template.js'
+import { saveImgtoFolder } from "./saveImgToFolder.js";
 dotenv.config()
 
 

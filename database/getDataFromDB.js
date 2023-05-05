@@ -23,8 +23,9 @@ export async function getDataFromDB(dateString) {
 
 
 export async function getDataBySign(sign, dayDateString){
-    const client = await connectToDB()
+    const client = await connectToDB().catch(err => console.log(err))
   const allData = await  getDataFromDB(dayDateString)
-  const signData = allData[0].horoscopes.filter(s => s.sign === sign)
+  const signData = allData[0].horoscopes.filter(s => s.sign === sign)[0]
+  console.log(signData)
   return signData
 }
