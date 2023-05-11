@@ -7,7 +7,7 @@ import { tweetAllImages, tweetTest } from './twitter/tweetImage.js'
 console.log('cron started')
 
 
-cron.schedule('0 7 * * *', ()=> cronGetHoroscopesAndSaveToDB(2),  {
+cron.schedule('29 1 * * *', ()=> cronGetHoroscopesAndSaveToDB(2),  {
     scheduled: true,
     timezone: "Europe/Rome"
   })
