@@ -57,7 +57,7 @@ export function formatItalianDate(dateStr) {
     // const difference = chooseDay === "tomorrow"  ? 1 : chooseDay === 'yesterday' ? -1 : 0
 
     const now = new Date()
-    // .toLocaleString('en-US', { timeZone: 'Europe/Rome' });
+    .toLocaleString('en-US', { timeZone: 'Europe/Rome' });
     const today = new Date(now)
    const chosenDay = new Date(today)
    chosenDay.setDate(chosenDay.getDate() + daysOfDifference)
