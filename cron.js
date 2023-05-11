@@ -11,14 +11,14 @@ console.log('cron started')
 //     scheduled: true,
 //     timezone: "Europe/Rome"
 //   })
-// cron.schedule('0 7 * * *', ()=> tweetAllImages(0),  {
-//     scheduled: true,
-//     timezone: "Europe/Rome"
-//   })
-cron.schedule('*/5 * * * *', ()=> tweetTest(0),  {
+cron.schedule('15 1 * * *', ()=> tweetAllImages(0),  {
     scheduled: true,
     timezone: "Europe/Rome"
   })
+// cron.schedule('*/5 * * * *', ()=> tweetTest(0),  {
+//     scheduled: true,
+//     timezone: "Europe/Rome"
+//   })
 
 
 
