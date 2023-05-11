@@ -73,8 +73,8 @@ export function getFormattedDate(daysOfDifference = 0) {
 
 export function getItalianTimestamp() {
   const days = ["dom", "lun", "mar", "mer", "gio", "ven", "sab"];
-  const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Rome" });
-  const day = days[now.getDay()];
+  const now = new Date()
+  const day = days[now.getDay().toLocaleString("en-US", { timeZone: "Europe/Rome" })];
   const hour = now.getHours().toString().padStart(2, "0");
   const minute = now.getMinutes().toString().padStart(2, "0");
   const second = now.getSeconds().toString().padStart(2, "0");
