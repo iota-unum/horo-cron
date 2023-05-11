@@ -1,6 +1,7 @@
 import { TwitterApi } from "twitter-api-v2";
 import dotenv from "dotenv";
 import { generateAllImages } from "../cards/generateAllImages.js";
+import { getRandomNumber } from "../helpers/utilities.js";
 dotenv.config()
 
 const client = new TwitterApi({
@@ -31,6 +32,19 @@ const text = `Buongiorno ${signName}!`
 
 
 console.log('TWEETED ALL IMAGES CIAO CIAO')
+
+
+}
+
+export async function tweetTest(day){
+  const allImages = await generateAllImages(day)
+  const randomSign = getRandomNumber()
+  const {signName, imgBuffer} = allImages[randomSign]
+
+  const text = `Buongiorno ${signName}!`
+  await tweetSingleImage(imgBuffer, text)
+  console.log('random image tweeted')
+
 
 
 }
