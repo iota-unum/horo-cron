@@ -70,11 +70,22 @@ export function getFormattedDate(daysOfDifference = 0) {
     .padStart(2, "0")}-12-00`;
   return { dateColons: colons, dateDashes: dashes };
 }
+// THIS WAS WORKING KIND OF
+// export function getItalianTimestamp() {
+//   const days = ["dom", "lun", "mar", "mer", "gio", "ven", "sab"];
+//   const now = new Date().toLocaleString("en-US", { timeZone: "Europe/Rome" })
+//   const day = days[now.getDay()];
+//   const hour = now.getHours().toString().padStart(2, "0");
+//   const minute = now.getMinutes().toString().padStart(2, "0");
+//   const second = now.getSeconds().toString().padStart(2, "0");
+//   return `${day} ${hour}:${minute}:${second}`;
+// }
 
 export function getItalianTimestamp() {
   const days = ["dom", "lun", "mar", "mer", "gio", "ven", "sab"];
-  const now = new Date()
-  const day = days[now.getDay().toLocaleString("en-US", { timeZone: "Europe/Rome" })];
+  const nowString = new Date().toLocaleString("en-US", { timeZone: "Europe/Rome" });
+  const now = new Date(nowString);
+  const day = days[now.getDay()];
   const hour = now.getHours().toString().padStart(2, "0");
   const minute = now.getMinutes().toString().padStart(2, "0");
   const second = now.getSeconds().toString().padStart(2, "0");
