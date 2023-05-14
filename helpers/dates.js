@@ -10,6 +10,18 @@ export function formatItalianDate(dateStr) {
 
   return italianDate;
 }
+export function getDateForCard(dateStr) {
+  const [year, month, day] = dateStr.split(":").map(Number);
+  const dateObj = new Date(year, month - 1, day);
+  const italianDate = dateObj.toLocaleDateString("it-IT", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
+  return italianDate;
+}
 export function formatColonsToJsDashes(dateStr) {
   const [year, month, day] = dateStr.split(":").slice(0, 3);
   const date = new Date(`${year}-${month}-${day}`);
@@ -91,3 +103,17 @@ export function getItalianTimestamp() {
   const second = now.getSeconds().toString().padStart(2, "0");
   return `${day} ${hour}:${minute}:${second}`;
 }
+
+export function getCardDate() {
+  const daysOfWeek = ['domenica', 'lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato'];
+  const monthsOfYear = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+
+  const now = new Date();
+  const dayOfWeek = daysOfWeek[now.getDay()];
+  const dayOfMonth = now.getDate();
+  const month = monthsOfYear[now.getMonth()];
+
+  return `${dayOfWeek} ${dayOfMonth} ${month}`;
+}
+
+

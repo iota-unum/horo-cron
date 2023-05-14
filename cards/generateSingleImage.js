@@ -23,16 +23,23 @@ export async function generateSingleImage(sign, horoscope){
     const template = html(generateTemplate(sign, horoscope, timestamp));
     
     // convert html to svg
-    const fontPath = path.resolve("./cards/Roboto-Regular.ttf")
+    const fontRegular = path.resolve("./cards/Roboto-Regular.ttf")
+    const fontThin = path.resolve("./cards/Roboto-Thin.ttf")
     const svg = await satori(template, {
         width: 600,
         height: 800,
         fonts: [
             {
                 name: "Roboto",
-                data: await readFile(fontPath),
+                data: await readFile(fontRegular),
                 weight: 700,
                 style: "normal",
+            },
+            {
+                name: "Roboto",
+                data: await readFile(fontThin),
+                weight: 100,
+                style: "lighter",
             },
         ],
     });

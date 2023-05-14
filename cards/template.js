@@ -1,60 +1,73 @@
-export function generateTemplate(sign,horoscope, timestamp) { return ` <div
-style="
-height: 800px;
-width: 600px;
-backgroundImage:
-url(https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXVyb3JhJTIwYm9yZWFsaXN8ZW58MHx8MHx8&auto=format&fit=crop&w=1400&q=60);
-backgroundSize: cover;
-display: flex;
-justifyContent: center;
-alignItems: center;
-color: white;
-"
->
-<div
-style="
-background: rgba( 255, 255, 255, 0.2 );
-boxShadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdropFilter: blur( 10px );
-WebkitBackdropFilter: blur( 10px );
-borderRadius: 10px,
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-fontSize: 2rem;
-width: 90%;
-height: 90%;
-padding: 2rem;,
-color: #ccc;
-display: flex;
-flexDirection: column;
-"
->
-<h1 style="
-fontSize:50px; display:flex
-" >${sign}</h1>
-<p style="
-fontSize:20px;
-display:flex
-" >${horoscope}</p>
-<p style="display:flex">${timestamp}</p>
-</div>
-</div>
-    `}
+import { getCardDate } from "../helpers/dates.js";
 
+export function generateTemplate(sign, horoscope) {
+    const todaysDate = getCardDate()
+  return `  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding: 1.5rem;
+    background-color:orangered;
+    color: white;
+    font-size:2rem;
+      background-size: cover;
+    "
+  >
+  <div style="
+  display:flex;
+  width: 100%;
+  border-bottom: 1px solid white;
+  justify-content: space-between;
+  align-items: center;
+  
+  ">
 
-    export function generateTemplateb(sign, horoscope, timestamp){
-`<div tw='flex'>
+      <div style="display: flex;  opacity: 1;
+      padding-bottom: .5rem;
+      
+      
+      ">
+      
+        <h3 style="font-weight: lighter;  margin:0 .3rem; font-size:3rem;">${sign}</h3>
+      </div>
+      <p
+      style=" font-size: 1rem;"
+      >${todaysDate} </p>
+  </div>
 
-${sign}
+    <p
+      style="
+opacity: .9;
+      
+        width: 97%;
+        height: 97%;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+        
+      "
+    >
+      ${horoscope}
+    </p>
+  </div>
+      `;
+}
 
-${horoscope}
-${timestamp}
-
-
-
-</div>
-
-
-`
-
-
-    }
+export function generateTemplateb(sign, horoscope, timestamp) {
+  `<div tw='flex'>
+  
+  ${sign}
+  
+  ${horoscope}
+  ${timestamp}
+  
+  
+  
+  </div>
+  
+  
+  `;
+}

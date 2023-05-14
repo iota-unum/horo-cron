@@ -15,7 +15,8 @@ dotenv.config();
 async function main() {
   try {
     const day = 2
-// await tweetAllImages(0)
+    // await generateAllImages(0)
+await tweetAllImages(0)
 //     const day = 3 // 0 === today, 1 === tomorrow , -1 yesterday
 //     const {dateColons, dateDashes} = getFormattedDate(0)
 // const data = await getDataFromDB(dateDashes)
@@ -27,7 +28,7 @@ async function main() {
 //   await saveImgtoFolder("twitterCards", signName, imgBuffer)
 // }
 // console.log('SAVED ALL!!!')
-await tweetTest(0)
+// await tweetTest(0)
   //  await  cronGetHoroscopesAndSaveToDB(2)
   //   //generate daily horoscope
   //   // const sign = 'toro'
