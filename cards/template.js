@@ -1,6 +1,9 @@
 import { getCardDate } from "../helpers/dates.js";
 
 export function generateTemplate(sign, horoscope, dateString) {
+    const textLength = horoscope.split(' ').length
+    console.log('TEXTLENGTH', textLength)
+    const textFontSize = textLength <= 125 ? '1.7rem' : textLength <= 135? '1.6rem' :'1.5rem'
   return `  <div
     style="
       display: flex;
@@ -34,6 +37,7 @@ export function generateTemplate(sign, horoscope, dateString) {
       <p
       style=" font-size: 1.5rem;"
       >${dateString} </p>
+     <span>${textLength}</span>
   </div>
 
     <p
@@ -43,7 +47,7 @@ export function generateTemplate(sign, horoscope, dateString) {
         color: #fff;
         display: flex;
         flex-direction: column;
-        font-size: 1.4rem;
+        font-size: ${textFontSize}
         
       "
     >
