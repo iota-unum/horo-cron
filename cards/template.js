@@ -37,7 +37,6 @@ export function generateTemplate(sign, horoscope, dateString) {
       <p
       style=" font-size: 1.5rem;"
       >${dateString} </p>
-     <span>${textLength}</span>
   </div>
 
     <p
