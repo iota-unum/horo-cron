@@ -1,7 +1,6 @@
 import { getCardDate } from "../helpers/dates.js";
 
-export function generateTemplate(sign, horoscope) {
-    const todaysDate = getCardDate()
+export function generateTemplate(sign, horoscope, dateString) {
   return `  <div
     style="
       display: flex;
@@ -30,23 +29,21 @@ export function generateTemplate(sign, horoscope) {
       
       ">
       
-        <h3 style="font-weight: lighter;  margin:0 .3rem; font-size:3rem;">${sign}</h3>
+        <h3 style="font-weight: lighter;  margin:0 .3rem; font-size:3.5rem;">${sign}</h3>
       </div>
       <p
-      style=" font-size: 1rem;"
-      >${todaysDate} </p>
+      style=" font-size: 1.5rem;"
+      >${dateString} </p>
   </div>
 
     <p
       style="
-opacity: .9;
       
-        width: 97%;
-        height: 97%;
+      
         color: #fff;
         display: flex;
         flex-direction: column;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         
       "
     >

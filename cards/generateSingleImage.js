@@ -15,12 +15,13 @@ dotenv.config()
 
 
 
-export async function generateSingleImage(sign, horoscope){
+export async function generateSingleImage(sign, horoscope, dateString){
+    console.log('DATESTRING', dateString)
     const timestamp = getItalianTimestamp()
     
   
     
-    const template = html(generateTemplate(sign, horoscope, timestamp));
+    const template = html(generateTemplate(sign, horoscope, dateString));
     
     // convert html to svg
     const fontRegular = path.resolve("./cards/Roboto-Regular.ttf")

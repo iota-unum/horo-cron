@@ -104,7 +104,7 @@ export function getItalianTimestamp() {
   return `${day} ${hour}:${minute}:${second}`;
 }
 
-export function getCardDate() {
+export function getTodaysCardDate() {
   const daysOfWeek = ['domenica', 'lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato'];
   const monthsOfYear = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
 
@@ -115,5 +115,18 @@ export function getCardDate() {
 
   return `${dayOfWeek} ${dayOfMonth} ${month}`;
 }
+export function getCardDate(dateStr) {
+  const daysOfWeek = ['domenica', 'lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato'];
+  const monthsOfYear = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+
+  const dateOnly = dateStr.split('-').slice(0, 3).join('-');
+  const date = new Date(dateOnly);
+  const dayOfWeek = daysOfWeek[date.getDay()];
+  const dayOfMonth = date.getDate();
+  const month = monthsOfYear[date.getMonth()];
+
+  return `${dayOfWeek} ${dayOfMonth} ${month}`;
+}
+
 
 
