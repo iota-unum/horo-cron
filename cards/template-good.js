@@ -16,8 +16,7 @@ const zodiacIcons = {
 export function generateTemplate(sign, horoscope, dateString) {
     const textLength = horoscope.split(' ').length
     console.log('TEXTLENGTH', textLength)
-    // const textFontSize = textLength <= 125 ? '1.7rem' : textLength <= 135? '1.6rem' :'1.4rem'
-    const textFontSize = horoscope.length <= 800 ? '1.7rem' : horoscope.length <= 935 ? '1.6rem' : horoscope.length <= 1000 ? '1.5rem' : '1.4rem'
+    const textFontSize = textLength <= 125 ? '1.7rem' : textLength <= 135? '1.6rem' :'1.5rem'
   return `  <div
     style="
       display: flex;
@@ -37,37 +36,33 @@ export function generateTemplate(sign, horoscope, dateString) {
   border-bottom: 1px solid white;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
-  padding-bottom: 1.2rem;
-  position: relative;
-  z-index: -1;
   
   ">
 
+      <div style="display: flex;  opacity: 1;
+      align-items: center;
+      justify-content: space-between;
 
-    
-      <h3 style="font-weight: lighter;  margin:0 .3rem; font-size:3.5rem;">${sign}</h3>
-      <img src=${zodiacIcons[sign]} width="60px"alt="" style=""/>
+      padding-bottom: .5rem;
       
+      
+      ">
+      <h3 style="font-weight: lighter;  margin:0 .3rem; font-size:3.5rem;">${sign}</h3>
+      </div>
+      <p
+      style=" font-size: 1.3rem;"
+      >${dateString} </p>
+      <img src=${zodiacIcons[sign]} width="50px"alt="" style="margin-left: auto"/>
   </div>
-  <p style=" 
-  margin: 0 auto;
-  align-self: center;
-  justify-self: center;
-  position: relative;
-  transform: translateY(-50%);
-  background: orangered;
-  padding: 10px;
-  font-size: 1rem; margin: 0;">${dateString} </p>
 
     <p
       style="
-     
+      
+      
         color: #fff;
         display: flex;
         flex-direction: column;
-        font-size: ${textFontSize};
-        margin: .5rem;
+        font-size: ${textFontSize}
         
       "
     >
