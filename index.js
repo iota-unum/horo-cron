@@ -15,8 +15,8 @@ dotenv.config();
 async function main() {
   try {
     const day = 2
-    await generateAllImages(-7)
-// await tweetAllImages(1)
+    // await generateAllImages(-7)
+await tweetAllImages(0)
 //     const day = 3 // 0 === today, 1 === tomorrow , -1 yesterday
 //     const {dateColons, dateDashes} = getFormattedDate(0)
 // const data = await getDataFromDB(dateDashes)
