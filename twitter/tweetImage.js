@@ -26,7 +26,7 @@ const allImages = await generateAllImages(day)
 console.log(allImages)
     for (let signImg of allImages) {
         const {signName, imgBuffer} = signImg
-const text = `Buongiorno ${signName}!`
+const text = `Ciao ${signName}!`
         await tweetSingleImage(imgBuffer, text)
     }
 

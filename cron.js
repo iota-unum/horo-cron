@@ -15,7 +15,7 @@ cron.schedule('30 7 * * *', ()=> tweetAllImages(0),  {
     scheduled: true,
     timezone: "Europe/Rome"
   })
-cron.schedule('40 13 * * *', ()=> tweetAllImages(0),  {
+cron.schedule('40 19 * * *', ()=> tweetAllImages(0),  {
     scheduled: true,
     timezone: "Europe/Rome"
   })

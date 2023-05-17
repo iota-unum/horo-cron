@@ -58,8 +58,8 @@ export function generateTemplate(sign, horoscope, dateString) {
 
 
     
-      <h3 style="font-weight: lighter;  margin:0 .3rem; font-size:3.5rem;">${sign}</h3>
-      <img src=${zodiacIcons[sign].icon} width="60px"alt="" style=""/>
+      <h3 style="font-weight: lighter;  margin:0 .3rem; font-size:3.5rem; margin : 0;">${sign}</h3>
+      <img src=${zodiacIcons[sign].icon} width="60px"alt="" style="margin: 0"/>
       
   </div>
   <p style=" 
