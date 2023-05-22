@@ -7,7 +7,7 @@ const timestamp = getItalianTimestamp()
 console.log('cron started')
 
 
-cron.schedule('00 5 * * *', ()=> cronGetHoroscopesAndSaveToDB(3),  {
+cron.schedule('37 10 * * *', ()=> cronGetHoroscopesAndSaveToDB(3),  {
     scheduled: true,
     timezone: "Europe/Rome"
   })
