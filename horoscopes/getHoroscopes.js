@@ -15,7 +15,7 @@ import { getPrompts } from "./horoscope-lib/getPrompts.js";
            const api = new ChatGPTAPI({
              apiKey: process.env.OPENAI_API_KEY,
              completionParams: {
-               temperature: 0.9,
+               temperature: 0.6,
                presence_penalty: 2
              },
            });
